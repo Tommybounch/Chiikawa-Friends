@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCharacter : Character
+public class Player : Character
 {
     private float defaultHealth;
-    public static PlayerCharacter Instance;
+    public static Player Instance;
     public Animator animator;
 
     void Awake() {
