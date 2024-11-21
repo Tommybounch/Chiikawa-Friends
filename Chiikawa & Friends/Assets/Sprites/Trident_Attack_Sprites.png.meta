@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 186dc2b997a58414188aa0efe98c009c
+guid: 2ff4646e221874318b854028f783001c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -108,7 +108,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Trident_Attack_Sprites_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 44
+        width: 21
+        height: 21
+      alignment: 9
+      pivot: {x: 0.2129399, y: 0.21764573}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db4a3e9c3cb844db2a6372106db06d3f
+      internalID: 1412413734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trident_Attack_Sprites_1
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 44
+        width: 22
+        height: 21
+      alignment: 9
+      pivot: {x: 0.24844812, y: 0.21764556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2590d41cc2e00469f9510a7adb513875
+      internalID: 676564896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trident_Attack_Sprites_2
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 43
+        width: 25
+        height: 21
+      alignment: 9
+      pivot: {x: 0.33792847, y: 0.21764556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75ad70fe49a804e10883f584f62ab52c
+      internalID: -1774128584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +182,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Trident_Attack_Sprites_0: 1412413734
+      Trident_Attack_Sprites_1: 676564896
+      Trident_Attack_Sprites_2: -1774128584
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
