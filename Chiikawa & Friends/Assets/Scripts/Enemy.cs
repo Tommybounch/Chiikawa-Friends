@@ -117,6 +117,7 @@ public class Enemy : Character
             other.GetComponent<Player>().takeDamage();
         }
     }
+    
     public void takeDamage() {
         health = health - 1;
         if(health<=0) {
