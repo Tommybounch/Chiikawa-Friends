@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : Character
 {
     protected Vector3 targetPosition;
-    protected enum State{Roam,Chase};
+    protected enum State{Roam, Chase};
     [SerializeField] protected float chaseDist,roamDist;
     protected State currentState;
     public Animator animator;
@@ -48,6 +48,9 @@ public class Enemy : Character
         rigidBody.rotation = 0;
         currState = animator.GetCurrentAnimatorStateInfo(0); 
         if(currState.IsName("Red Jump Start-up - Animation")){
+            rigidBody.velocity = Vector3.zero;
+        }
+        if(currState.IsName("Dead")){
             rigidBody.velocity = Vector3.zero;
         }
         else if(moveDirection.magnitude > 0) {
@@ -104,5 +107,35 @@ public class Enemy : Character
             _y = (_y>y) ? _y-y*2 : _y+y*2;
         }
         return new Vector2(_x, _y);
+    }
+
+    void OnTriggerEnter2D(Collider2D other){
+        if(other.CompareTag("Player Weapon")){
+            this.takeDamage();
+        }
+        else if(other.CompareTag("Player")){
+            other.GetComponent<Player>().takeDamage();
+        }
+    }
+    public void takeDamage() {
+        health = health - 1;
+        if(health<=0) {
+            StartCoroutine(deathAnimation());
+        }
+        else{
+            StartCoroutine(damageAnimation());
+        }
+    }
+
+    IEnumerator damageAnimation(){
+        animator.SetBool("Hurt", true);
+        yield return new WaitForSeconds(1);
+        animator.SetBool("Hurt", false);
+    }
+
+    IEnumerator deathAnimation(){
+        animator.SetBool("Dead", true);
+        yield return new WaitForSeconds(.5f);
+        Destroy(gameObject);
     }
 }
