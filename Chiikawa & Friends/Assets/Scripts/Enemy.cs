@@ -8,6 +8,8 @@ public class Enemy : Character
     protected enum State{Roam,Chase};
     [SerializeField] protected float chaseDist,roamDist;
     protected State currentState;
+    public Animator animator;
+    public AnimatorStateInfo currState;
     float x,y;
 
     protected override void CustomStart() {
@@ -44,7 +46,11 @@ public class Enemy : Character
     
     protected override void Move() {
         rigidBody.rotation = 0;
-        if(moveDirection.magnitude > 0) {
+        currState = animator.GetCurrentAnimatorStateInfo(0); 
+        if(currState.IsName("Red Jump Start-up - Animation")){
+            rigidBody.velocity = Vector3.zero;
+        }
+        else if(moveDirection.magnitude > 0) {
             rigidBody.velocity = moveDirection * moveSpeed;
         }
         else {
