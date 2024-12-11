@@ -8,14 +8,32 @@ public class Player : Character
     public static Player Instance;
     public Animator animator;
     private AnimatorStateInfo currState;
+    public Inventory inventory;
+
+    
 
     void Awake() {
-        if(Instance == null){
-        Instance = this;}
+        inventory = new Inventory(45);
+        
     }
 
+    public void DropItem(Collectable item)
+    {
+        Vector3 spawnLocation = transform.position;
+
+        float randX = Random.Range(-1f, 1f);
+        float randY = Random.Range(-1f, 1f);
+
+        Vector3 spawnOffset = new Vector3(randX, randY, 0f).normalized;
+
+        Collectable droppedItem = Instantiate(item, spawnLocation + spawnOffset, Quaternion.identity);
+
+        droppedItem.rb2d.AddForce(spawnOffset * 2f, ForceMode2D.Impulse);
+
+    }
     protected override void CustomStart() {
         defaultHealth = health;
+
     }
 
     protected override void Move() {
@@ -64,6 +82,28 @@ public class Player : Character
                 else{
                     changeAnimatorParameters("NoPress");
                 }
+            }
+        }
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            Vector3Int position = new Vector3Int((int)transform.position.x, (int)transform.position.y, 0);
+
+            if(GameManager.instance.tileManager.IsInteractable(position))
+            {
+                Debug.Log("Tile is interactable!");
+                GameManager.instance.tileManager.SetInteracted(position);
+            }
+        }
+
+        if(Input.GetKeyDown(KeyCode.C))
+        {
+            Vector3Int position = new Vector3Int((int)transform.position.x, (int)transform.position.y, 0);
+
+            if(GameManager.instance.tileManager.IsInteractable(position))
+            {
+                Debug.Log("Tile is Plantable");
+                GameManager.instance.tileManager.SetPlanted(position);
             }
         }
     }
