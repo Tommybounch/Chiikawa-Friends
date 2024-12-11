@@ -5,25 +5,19 @@ public class RoomGenerator : MonoBehaviour
 {
     public GameObject blackSpacePrefab;
     public GameObject floorPrefab;
-    
-    // Wall prefabs for each side (left, right, top, bottom)
     public GameObject topWallPrefab;
     public GameObject bottomWallPrefab;
     public GameObject leftWallPrefab;
     public GameObject rightWallPrefab;
-
-    // Corner prefabs for each corner
     public GameObject topLeftCornerPrefab;
     public GameObject topRightCornerPrefab;
     public GameObject bottomLeftCornerPrefab;
     public GameObject bottomRightCornerPrefab;
-
     public int roomWidth = 20;
     public int roomHeight = 20;
     public float noiseScale = 10f;
     public float threshold = 0.5f;
-    private Vector2 noiseOffset;   // Randomized offset
-
+    private Vector2 noiseOffset;
     private bool[,] roomShape;
 
     private void Start()
@@ -49,21 +43,20 @@ public class RoomGenerator : MonoBehaviour
                         (y + position.y) / noiseScale + noiseOffset.y
                     );
 
-                    // Set roomShape to true only for interior tiles (not on the edge)
+                    // Set roomShape to true only for non-edge tiles
                     roomShape[x, y] = noiseValue > threshold;
                 }
                 else
                 {
-                    // Set roomShape to false for edge tiles
                     roomShape[x, y] = false;
                 }
             }
         }
 
-        // Step 2: Ensure all floor tiles are connected
+        //Ensure all floor tiles are connected
         EnsureFloorConnectivity(ref roomShape);
 
-        // Step 3: Place tiles based on room shape
+        //Place tiles based on room shape
         for (int x = -1; x <= roomWidth; x++)
         {
             for (int y = -1; y <= roomHeight; y++)
@@ -72,7 +65,7 @@ public class RoomGenerator : MonoBehaviour
 
                 if (x >= 0 && x < roomWidth && y >= 0 && y < roomHeight)
                 {
-                    // Floor tiles (black space)
+                    // Floor tiles
                     if (roomShape[x, y])
                     {
                         Instantiate(floorPrefab, tilePosition, Quaternion.identity);
@@ -80,11 +73,9 @@ public class RoomGenerator : MonoBehaviour
                 }
 
                 // Wall tiles
-                // Wall is placed only if the tile is at the edge of a floor tile
                 if ((x > -1 && x < roomWidth) && (y > -1 && y < roomHeight) && 
                     (!roomShape[x, y] && IsFloorTileAdjacent(x, y)))
                 {
-                    // Check neighboring floor tiles to determine the type of wall to place
                     if (y + 1 < roomHeight && roomShape[x, y + 1]) // Floor tile is below, so this is a top wall
                     {
                         Instantiate(topWallPrefab, tilePosition, Quaternion.identity);
@@ -130,10 +121,8 @@ public class RoomGenerator : MonoBehaviour
         }
     }
 
-    // Helper method to check if there's a floor tile adjacent to the current position
     private bool IsFloorTileAdjacent(int x, int y)
     {
-        // Check all 4 directions for adjacent floor tiles
         return (x > 0 && roomShape[x - 1, y]) || 
             (x < roomWidth - 1 && roomShape[x + 1, y]) || 
             (y > 0 && roomShape[x, y - 1]) || 
@@ -145,8 +134,6 @@ public class RoomGenerator : MonoBehaviour
         // Find a starting point (any floor tile)
         Queue<Vector2Int> toVisit = new Queue<Vector2Int>();
         bool[,] visited = new bool[roomWidth, roomHeight];
-
-        // Find the first floor tile
         bool foundStart = false;
         for (int x = 0; x < roomWidth; x++)
         {
@@ -169,8 +156,6 @@ public class RoomGenerator : MonoBehaviour
         {
             Vector2Int current = toVisit.Dequeue();
             connectedFloorTiles.Add(current);
-
-            // Check neighboring tiles (left, right, up, down)
             Vector2Int[] neighbors = new Vector2Int[] {
                 new Vector2Int(current.x - 1, current.y), // Left
                 new Vector2Int(current.x + 1, current.y), // Right
@@ -191,16 +176,13 @@ public class RoomGenerator : MonoBehaviour
         // If any floor tiles are disconnected, reconnect them
         if (connectedFloorTiles.Count < CountFloorTiles(roomShape))
         {
-            // Find any disconnected floor tiles and connect them
             for (int x = 0; x < roomWidth; x++)
             {
                 for (int y = 0; y < roomHeight; y++)
                 {
                     if (roomShape[x, y] && !visited[x, y])
                     {
-                        // Connect disconnected tile by making it a floor tile
                         roomShape[x, y] = true;
-                        // Optionally, you can connect the newly added floor tile to its nearest neighbors
                     }
                 }
             }
