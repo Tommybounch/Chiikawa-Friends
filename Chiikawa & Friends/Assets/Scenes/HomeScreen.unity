@@ -182,8 +182,7 @@ MonoBehaviour:
   m_text: Exit
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed9f845fd212e405085f33a66179e853, type: 2}
-  m_sharedMaterial: {fileID: 6192421373027100112, guid: ed9f845fd212e405085f33a66179e853,
-    type: 2}
+  m_sharedMaterial: {fileID: 6192421373027100112, guid: ed9f845fd212e405085f33a66179e853, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -567,8 +566,7 @@ MonoBehaviour:
   m_text: X
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed9f845fd212e405085f33a66179e853, type: 2}
-  m_sharedMaterial: {fileID: 6192421373027100112, guid: ed9f845fd212e405085f33a66179e853,
-    type: 2}
+  m_sharedMaterial: {fileID: 6192421373027100112, guid: ed9f845fd212e405085f33a66179e853, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -754,8 +752,7 @@ MonoBehaviour:
   m_text: "Chiikawa \n& Friends"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed9f845fd212e405085f33a66179e853, type: 2}
-  m_sharedMaterial: {fileID: 6192421373027100112, guid: ed9f845fd212e405085f33a66179e853,
-    type: 2}
+  m_sharedMaterial: {fileID: 6192421373027100112, guid: ed9f845fd212e405085f33a66179e853, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1022,8 +1019,7 @@ MonoBehaviour:
   m_text: Save File
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed9f845fd212e405085f33a66179e853, type: 2}
-  m_sharedMaterial: {fileID: 6192421373027100112, guid: ed9f845fd212e405085f33a66179e853,
-    type: 2}
+  m_sharedMaterial: {fileID: 6192421373027100112, guid: ed9f845fd212e405085f33a66179e853, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1274,8 +1270,7 @@ MonoBehaviour:
   m_text: Start Game
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed9f845fd212e405085f33a66179e853, type: 2}
-  m_sharedMaterial: {fileID: 6192421373027100112, guid: ed9f845fd212e405085f33a66179e853,
-    type: 2}
+  m_sharedMaterial: {fileID: 6192421373027100112, guid: ed9f845fd212e405085f33a66179e853, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1409,8 +1404,7 @@ MonoBehaviour:
   m_text: X
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed9f845fd212e405085f33a66179e853, type: 2}
-  m_sharedMaterial: {fileID: 6192421373027100112, guid: ed9f845fd212e405085f33a66179e853,
-    type: 2}
+  m_sharedMaterial: {fileID: 6192421373027100112, guid: ed9f845fd212e405085f33a66179e853, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1722,8 +1716,7 @@ MonoBehaviour:
   m_text: Load
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed9f845fd212e405085f33a66179e853, type: 2}
-  m_sharedMaterial: {fileID: 6192421373027100112, guid: ed9f845fd212e405085f33a66179e853,
-    type: 2}
+  m_sharedMaterial: {fileID: 6192421373027100112, guid: ed9f845fd212e405085f33a66179e853, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1990,8 +1983,7 @@ MonoBehaviour:
   m_text: Game 1                                               2024/11/11/19:08:01
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed9f845fd212e405085f33a66179e853, type: 2}
-  m_sharedMaterial: {fileID: 6192421373027100112, guid: ed9f845fd212e405085f33a66179e853,
-    type: 2}
+  m_sharedMaterial: {fileID: 6192421373027100112, guid: ed9f845fd212e405085f33a66179e853, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2347,8 +2339,7 @@ MonoBehaviour:
   m_text: Enter text...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed9f845fd212e405085f33a66179e853, type: 2}
-  m_sharedMaterial: {fileID: 6192421373027100112, guid: ed9f845fd212e405085f33a66179e853,
-    type: 2}
+  m_sharedMaterial: {fileID: 6192421373027100112, guid: ed9f845fd212e405085f33a66179e853, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2748,8 +2739,7 @@ MonoBehaviour:
   m_text: Game 0                                               2024/11/01/08:11:59
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed9f845fd212e405085f33a66179e853, type: 2}
-  m_sharedMaterial: {fileID: 6192421373027100112, guid: ed9f845fd212e405085f33a66179e853,
-    type: 2}
+  m_sharedMaterial: {fileID: 6192421373027100112, guid: ed9f845fd212e405085f33a66179e853, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2883,8 +2873,7 @@ MonoBehaviour:
   m_text: New
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed9f845fd212e405085f33a66179e853, type: 2}
-  m_sharedMaterial: {fileID: 6192421373027100112, guid: ed9f845fd212e405085f33a66179e853,
-    type: 2}
+  m_sharedMaterial: {fileID: 6192421373027100112, guid: ed9f845fd212e405085f33a66179e853, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3151,8 +3140,7 @@ MonoBehaviour:
   m_text: "\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed9f845fd212e405085f33a66179e853, type: 2}
-  m_sharedMaterial: {fileID: 6192421373027100112, guid: ed9f845fd212e405085f33a66179e853,
-    type: 2}
+  m_sharedMaterial: {fileID: 6192421373027100112, guid: ed9f845fd212e405085f33a66179e853, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3286,8 +3274,7 @@ MonoBehaviour:
   m_text: Last edit
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed9f845fd212e405085f33a66179e853, type: 2}
-  m_sharedMaterial: {fileID: 6192421373027100112, guid: ed9f845fd212e405085f33a66179e853,
-    type: 2}
+  m_sharedMaterial: {fileID: 6192421373027100112, guid: ed9f845fd212e405085f33a66179e853, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3814,8 +3801,7 @@ MonoBehaviour:
   m_text: Enter Name for New Game
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed9f845fd212e405085f33a66179e853, type: 2}
-  m_sharedMaterial: {fileID: 6192421373027100112, guid: ed9f845fd212e405085f33a66179e853,
-    type: 2}
+  m_sharedMaterial: {fileID: 6192421373027100112, guid: ed9f845fd212e405085f33a66179e853, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

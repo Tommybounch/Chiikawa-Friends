@@ -55,11 +55,6 @@ public class DayNightScript : MonoBehaviour
         {
             hours = 0;
             days += 1;
-            if (hours == 0 && mins == 0) // At the start of a new day
-            {
-                FindObjectOfType<TileManager>().UpdateGrowth();
-            }
-
         }
         ControlPPV(); // changes post processing volume after calculation
     }
