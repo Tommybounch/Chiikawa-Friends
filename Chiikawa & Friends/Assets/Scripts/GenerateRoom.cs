@@ -13,6 +13,11 @@ public class RoomGenerator : MonoBehaviour
     public GameObject topRightCornerPrefab;
     public GameObject bottomLeftCornerPrefab;
     public GameObject bottomRightCornerPrefab;
+    public GameObject player;
+    public GameObject slimePrefab;
+    public GameObject escapeRopePrefab;
+    public GameObject stonePrefab;
+    public int maxObjects = 10;
     public int roomWidth = 20;
     public int roomHeight = 20;
     public float noiseScale = 10f;
@@ -23,8 +28,10 @@ public class RoomGenerator : MonoBehaviour
     private void Start()
     {
         noiseOffset = new Vector2(Random.Range(0f, 100f), Random.Range(0f, 100f));
+        player = GameObject.FindWithTag("Player");
         Vector2Int startPosition = new Vector2Int(0, 0);
         GenerateRoom(startPosition);
+        PlaceObjects();
     }
 
     public void GenerateRoom(Vector2Int position)
@@ -61,7 +68,7 @@ public class RoomGenerator : MonoBehaviour
         {
             for (int y = -1; y <= roomHeight; y++)
             {
-                Vector3 tilePosition = new Vector3(position.x + x, position.y + y, 0);
+                Vector2 tilePosition = new Vector2(position.x + x, position.y + y);
 
                 if (x >= 0 && x < roomWidth && y >= 0 && y < roomHeight)
                 {
@@ -205,5 +212,65 @@ public class RoomGenerator : MonoBehaviour
             }
         }
         return count;
+    }
+
+    private void PlaceObjects()
+    {
+        List<Vector2> floorPositions = new List<Vector2>();
+        Vector2Int escapeRopePosition = new Vector2Int(0, 0);
+        // Get all floor tile positions
+        for (int x = 0; x < roomWidth; x++)
+        {
+            for (int y = 0; y < roomHeight; y++)
+            {
+                if (roomShape[x, y])
+                {
+                    Vector2 floorPosition = new Vector2(x, y);
+                    floorPositions.Add(floorPosition);
+                }
+            }
+        }
+
+        // Shuffle the list of floor tiles
+        for (int i = 0; i < floorPositions.Count; i++)
+        {
+            Vector2 temp = floorPositions[i];
+            int randomIndex = Random.Range(i, floorPositions.Count);
+            floorPositions[i] = floorPositions[randomIndex];
+            floorPositions[randomIndex] = temp;
+        }
+
+        // Place objects on randomly selected floor tiles
+        int numObjs = Mathf.Min(maxObjects, floorPositions.Count);
+        for (int i = 0; i < numObjs; i++)
+        {
+            if(i == 1 || i == numObjs - 1){
+                Instantiate(slimePrefab, floorPositions[i], Quaternion.identity);
+            }
+            else if(i == numObjs / 2){
+                Instantiate(escapeRopePrefab, floorPositions[i], Quaternion.identity);
+                escapeRopePosition = new Vector2Int((int) floorPositions[i].x, (int) floorPositions[i].y);
+            }
+            else{
+                Instantiate(stonePrefab, floorPositions[i], Quaternion.identity);
+            }
+        }
+
+        Vector2Int[] neighbors = new Vector2Int[] {
+            new Vector2Int(escapeRopePosition.x - 1, escapeRopePosition.y),
+            new Vector2Int(escapeRopePosition.x + 1, escapeRopePosition.y),
+            new Vector2Int(escapeRopePosition.x, escapeRopePosition.y - 1),
+            new Vector2Int(escapeRopePosition.x, escapeRopePosition.y + 1)
+        };
+
+        foreach (var neighbor in neighbors)
+        {
+            if (IsValidPosition(neighbor.x, neighbor.y) && roomShape[neighbor.x, neighbor.y])
+            {
+                Debug.Log("Placed Player");
+                player.transform.position = new Vector2(neighbor.x, neighbor.y);
+                break;
+            }
+        }
     }
 }

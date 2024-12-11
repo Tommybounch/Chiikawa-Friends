@@ -10,5 +10,4 @@ public class LoadScene : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene"); // Name of the scene to load
     }
-
 }
